@@ -1,16 +1,31 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../Context/AuthContext";
 import InputField from "./InputField";
 
 const LoginForm = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+  const { login } = useAuth();
 
   const handleLogin = (e) => {
     e.preventDefault();
 
+    // Example login logic - you can modify these credentials
     if (username === "user" && password === "password") {
+      login({
+        username,
+        name: "User",
+        role: "user",
+      });
+      navigate("/dashboard");
+    } else if (username === "admin" && password === "admin123") {
+      login({
+        username,
+        name: "Fakiyat",
+        role: "admin",
+      });
       navigate("/home");
     } else {
       alert("Invalid Credentials");
@@ -38,8 +53,7 @@ const LoginForm = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          {/* Login Button */}
-          <button type="submit" className="loginbtn" text="Login">
+          <button type="submit" className="loginbtn">
             Login
           </button>
         </form>
