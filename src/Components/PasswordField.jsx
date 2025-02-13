@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { MdVisibility, MdVisibilityOff } from "react-icons/md";
 
-const InputField = ({ type, placeholder, value, onChange }) => {
+const PasswordField = ({ type, placeholder, value, onChange }) => {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
@@ -26,4 +26,4 @@ const InputField = ({ type, placeholder, value, onChange }) => {
   );
 };
 
-export default InputField;
+export default PasswordField;

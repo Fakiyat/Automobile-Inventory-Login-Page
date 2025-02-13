@@ -34,9 +34,9 @@
 
 /* Logo Image */
 .logo {
-  width: 70px; /* Adjust size as needed */
+  margin: 10px 5px;
+  width: 35px; /* Adjust size as needed */
   height: auto;
-  border-radius: 10px;
 }
 
 /* Logo Text */
@@ -103,7 +103,6 @@
 .input-field {
   width: 100%;
   padding: 12px 16px;
-
   border: 1px solid #ccc;
   border-radius: 19px;
   font-size: 16px;

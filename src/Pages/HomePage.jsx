@@ -1,17 +1,7 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
-import { useAuth } from "../Context/AuthContext";
 import "/src/Styles/HomePage.css";
 
-const HomePage = () => {
-  const { user, logout } = useAuth();
-  const navigate = useNavigate();
-
-  const handleLogout = () => {
-    logout();
-    navigate("/");
-  };
-
+function HomePage() {
   return (
     <div className="home-container">
       <header className="navbar">
@@ -31,6 +21,6 @@ const HomePage = () => {
       </footer>
     </div>
   );
-};
+}
 
 export default HomePage;
